@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+        }
+        .search-list{
+            width: 500px;
+            height: 600px;
+            background-color: #fff;
+            position: absolute;
+            transform: translateY(-100%);
+            transition: all 0.3s;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        .search-list.active{
+            transform: translateY(0px)
+        }
+        #reault-list{
+            list-style: none;
+            padding: 0 10px;
+        }
+        #reault-list li{
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0.5;
+        }
+        #reault-list li:hover{
+            opacity: 1;
+        }
+        audio{
+            width: 100%;
+            position: absolute;
+            bottom: 60px;
+        }
+        div.lrc{
+            display: block;
+            position: absolute;
+            top: 50px;
+            width: 300px;
+            height: 500px;
+            overflow: hidden;
+            line-height: 30px;
+        }
+        ul#lrc-wrap{
+            list-style: none;
+        }
+
+        ul#lrc-wrap > li{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input id="keyword" type="text">
+        <button id="searchBtn">搜索</button>
+    </div>
+    <div class="search-list">
+        <ul id="reault-list">
+            
+        </ul>
+    </div>
+    <div class="lrc">
+        <ul id="lrc-wrap">
+
+        </ul>
+    </div>
+    <audio id="audio" src="" controls autoplay></audio>
+    <script src="music.js"></script>
+</body>
+</html>
